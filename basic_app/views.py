@@ -10,7 +10,7 @@ from tensorflow.keras.models import load_model
 from .models import Post
 from django.utils import timezone
 
-model = load_model('basic_app/extras/Model_LSTM.h5py')
+model = load_model('basic_app/programs_folder/Model_LSTM.h5py')
 # Create your views here.
 
 def index(request):
