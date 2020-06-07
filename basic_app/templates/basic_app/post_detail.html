@@ -1,0 +1,22 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+  {% if post.published_date %}
+    <div>
+    {{post.published_date}}
+    </div>
+
+  {% else %}
+    <a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+  {% endif %}
+  <p>{{post.text}}</p>
+
+  <form action="predict" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="var" value="{{post.text}}">
+    <input type="submit" value="Predict">
+
+  </form>
+
+  {% endblock %}

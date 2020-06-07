@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HOme</title>
+  </head>
+  <body>
+    <h1>Welcome to Home Page</h1>
+    <form action="predict", method='POST'>
+      {% csrf_token %}
+      <input type="text" value="Input news in string", onfocus="this.value=''", name='t1'>
+      <input type="submit" value="predict">
+
+    </form>
+
+  </body>
+</html>

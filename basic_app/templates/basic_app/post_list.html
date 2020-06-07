@@ -1,0 +1,15 @@
+{% extends 'basic_app/base.html' %}
+
+{% block content %}
+
+{% if post_list %}
+{% for k in post_list %}
+  <h1><a href="{% url 'post_detail' pk=k.pk%}">{{k.title}}</a></h1>
+  <div class="date">
+    <p>Published on:{{k.published_date|date:'D M Y'}}</p>
+    {% endfor %}
+{%else%}
+<h2>No posts yet!</h2>
+{%endif%}
+  </div>
+  {% endblock %}
